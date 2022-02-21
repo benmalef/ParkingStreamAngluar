@@ -1,0 +1,21 @@
+.container{
+    background-color:#b3b9bd;
+    width: 30%;
+    border-radius: 5%;
+    margin-top: 10%;
+
+}
+.login-error{
+    color: red;
+    
+   
+}
+
+.text-parkingStreamColor{
+    color:#0a4e8d;
+}
+
+button.btn-primary{
+    background-color: #0a4e8d;
+    
+}

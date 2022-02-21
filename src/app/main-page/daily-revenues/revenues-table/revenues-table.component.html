@@ -1,0 +1,24 @@
+<table class="table table-hover font-weight-normal table-dark  border-secondary  table-bordered  table-sm">
+    <thead>
+        <tr>
+            <th>Hours</th>
+            <th>No of Cars</th>
+            <th>Revenue in <app-currency-symbol></app-currency-symbol>
+            </th>
+        </tr>
+    </thead>
+    <!-- check and change the background-color for cars or opacity for revenues-->
+    <tbody>
+        <tr *ngFor="let revenue of revenues">
+            <td>{{revenue.getHour()}}</td>
+            <td [ngClass]="{'bg-light-green': (revenue.getNumberOfCars()>=101)&&(revenue.getNumberOfCars()<=150),
+                'bg-dark-orange': (revenue.getNumberOfCars()>=151)&&(revenue.getNumberOfCars()<=200),
+                'bg-red': (revenue.getNumberOfCars()>=201)&&(revenue.getNumberOfCars()<=255) }">
+                {{revenue.getNumberOfCars()}}</td>
+            <td [ngClass]="{'opacity-03': (revenue.getDailyRevenue()>=100)&&(revenue.getDailyRevenue()<=550),
+                    'opacity-075': (revenue.getDailyRevenue()>=551)&&(revenue.getDailyRevenue()<=2575),
+                    'opacity-1': (revenue.getDailyRevenue()>=2576)&&(revenue.getDailyRevenue()<=4500) }">
+                {{revenue.getDailyRevenue()}}</td>
+        </tr>
+    </tbody>
+</table>

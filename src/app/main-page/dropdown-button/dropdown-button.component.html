@@ -1,0 +1,6 @@
+<div ngbDropdown class="d-inline-block">
+    <button class="btn bg-color text-white" id="dropdownBasic1" ngbDropdownToggle>{{currentDay}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button (click)="onClick($event)" *ngFor="let date of dates" ngbDropdownItem>{{date}}</button>
+    </div>
+</div>

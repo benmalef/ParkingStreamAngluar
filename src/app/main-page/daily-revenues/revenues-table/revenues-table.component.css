@@ -1,0 +1,36 @@
+
+td{
+    width: 5%;
+}
+th{
+    width: 5%;
+}
+.table{
+width: 80%;
+margin-top: 2%!important;
+margin: auto;
+}
+.bg-light-green{
+    background-color: rgb(208, 243, 112);
+    color:black;
+}
+.bg-dark-orange{
+    background-color: rgba(219, 153, 29, 0.959);
+    color:black;
+}
+.bg-red{
+    background-color: red;
+    color:black;
+}
+.opacity-03{
+opacity: 0.3;
+background-color: rgb(58, 57, 57);
+}
+.opacity-075{
+    opacity: 0.75;
+    background-color: rgb(58, 57, 57);
+}
+.opacity-1{
+    opacity: 1;
+    background-color: rgb(58, 57, 57);
+}

@@ -1,0 +1,43 @@
+<div class="container  text-center bg-light.bg-gradient">
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <img class="m-3"
+            src="https://uploads-ssl.webflow.com/606187e5729114009a3b6a4d/60767e215005e23de37e35ea_logo.png"
+            alt="ParkingStream image">
+        <h1 class=" fs-3 fw-bold  mb-3 text-start text-parkingStreamColor">Sign in</h1>
+
+        <div class="mb-3 form-floating ">
+            <input type="email" email class=" form-control rounded-pill" placeholder="Email Address" required ngModel
+                name="userEmail" #userEmail="ngModel">
+            <label for="userEmail" class=" form-label">Email address </label>
+            <!-- Check for errors -->
+            <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)" class="text-danger m-2">
+                <div *ngIf="userEmail.errors?.['required']">
+                    <p>Email is required.</p>
+                </div>
+                <div *ngIf="userEmail.errors?.['email']">
+                    <p> Please enter a valid email.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 form-floating">
+            <input type="password" class="form-control rounded-pill" placeholder="userPassword" minlength="8" required
+                ngModel name="userPassword" #userPassword="ngModel">
+            <label for="userPassword" class="form-label">Password</label>
+        </div>
+        <!-- Check for errors -->
+        <div *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)" class="text-danger m-2">
+            <div *ngIf="userPassword.errors?.['required']">
+                <p>Password is required.</p>
+            </div>
+            <div *ngIf="userPassword.errors?.['minlength']">
+                <p>The password must be at <br>
+                    least 8 characters</p>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary fs-5 w-50 m-3 rounded-pill" [disabled]="!loginForm.valid">
+            Sign In </button>
+
+    </form>
+
+</div>
