@@ -36,7 +36,7 @@ import { UserSettingService } from './main-page/user-settings/userSettings.servi
     DropdownButtonComponent,
     RevenuesTableComponent,
     UserSettingsComponent,
-    CurrencySymbolComponent,
+    CurrencySymbolComponent
 
 
 

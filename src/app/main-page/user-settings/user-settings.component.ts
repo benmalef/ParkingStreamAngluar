@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserSettingService } from './userSettings.service';
 @Component({
@@ -10,11 +10,15 @@ export class UserSettingsComponent implements OnInit {
 
 
 
-  constructor(private userSettingService: UserSettingService) { }
+  constructor(private userSettingService: UserSettingService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-
+    if (this.userSettingService.currencySymbol === '$') {
+      document.getElementById('flexRadioDefault2').setAttribute("checked", "");
+    }
   }
+
+
 
   //update the currencySymbol 
   onClick(event) {

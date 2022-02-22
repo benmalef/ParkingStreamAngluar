@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { dailyRevenue } from "src/app/models/dailyRevenue.model";
 import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 Injectable()
 export class DailyRevenuesService {
     // calculate the days
     private dates = [];
     private dailyRevenues: dailyRevenue[] = [];
-    updatedDailyRevenuesTable = new EventEmitter<dailyRevenue[]>();
+    updatedDailyRevenuesTable = new Subject<dailyRevenue[]>();
 
 
     formatDate(day) {
@@ -43,6 +44,6 @@ export class DailyRevenuesService {
     updateDailyRevenueTable() {
         this.dailyRevenues = []; //empty the dailyRevenues
         this.createDailyRevenueTable(24);//create the new dailyRevenues
-        this.updatedDailyRevenuesTable.emit(this.dailyRevenues.slice());//passing to eventEmitter
+        this.updatedDailyRevenuesTable.next(this.dailyRevenues.slice());//passing to eventEmitter
     }
 }

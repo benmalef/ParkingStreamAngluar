@@ -1,10 +1,11 @@
 import { EventEmitter, Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserSettingService {
-    currencySymbolEmitter = new EventEmitter<string>();
+    currencySymbolEmitter = new Subject<string>();
     currencySymbol = '€';
 
     currencySymbolUpdated(): Promise<string> {
@@ -16,7 +17,7 @@ export class UserSettingService {
     }
     //update the Header symbol
     currencySymbolUpdatedEmmiter(currencySymbol) {
-        this.currencySymbolEmitter.emit(currencySymbol);
+        this.currencySymbolEmitter.next(currencySymbol);
         return (currencySymbol);
     }
 
