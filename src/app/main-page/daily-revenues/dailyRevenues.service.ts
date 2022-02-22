@@ -44,6 +44,6 @@ export class DailyRevenuesService {
     updateDailyRevenueTable() {
         this.dailyRevenues = []; //empty the dailyRevenues
         this.createDailyRevenueTable(24);//create the new dailyRevenues
-        this.updatedDailyRevenuesTable.next(this.dailyRevenues.slice());//passing to eventEmitter
+        this.updatedDailyRevenuesTable.next(this.dailyRevenues.slice());
     }
 }
